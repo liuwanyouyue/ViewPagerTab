@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="CustomTitleBar" parent="android:Theme">
+        <item name="android:windowTitleSize">32dp</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground
+        </item> <!--设置titlebar的背景-->
+
+    </style>
+</resources>

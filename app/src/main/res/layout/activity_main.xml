@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lwyy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+  >
+
+    <include layout="@layout/navigation_bar" />
+
+   <cn.wosdk.viewpagertab.ui.widget.ViewPagerIndicator
+        android:id="@+id/id_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+       lwyy:item_count="5">
+
+        <TextView
+            android:id="@+id/id_tab1_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="测试1"
+            android:gravity="center"
+            android:textColor="@color/bar_bg_color"
+            android:textSize="14dp"
+           />
+
+        <TextView
+            android:id="@+id/id_tab2_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="测试2"
+            android:gravity="center"
+            android:textColor="@color/star_list_linearlayout_textcolor"
+            android:textSize="14dp"
+            />
+
+        <TextView
+            android:id="@+id/id_tab3_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="测试3"
+            android:gravity="center"
+            android:textColor="@color/star_list_linearlayout_textcolor"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/id_tab4_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="测试4"
+            android:gravity="center"
+            android:textColor="@color/star_list_linearlayout_textcolor"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/id_tab5_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="测试5"
+            android:gravity="center"
+            android:textColor="@color/star_list_linearlayout_textcolor"
+            android:textSize="14dp" />
+    </cn.wosdk.viewpagertab.ui.widget.ViewPagerIndicator>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_page_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></android.support.v4.view.ViewPager>
+</LinearLayout>
+
+
+

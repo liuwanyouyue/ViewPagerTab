@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="bar_bg_color">#FF6699</color>
+    <color name="white">#fff</color>
+    <color name="star_list_linearlayout_textcolor">#a0a5aa</color>  <!--字体的颜色-->
+
+</resources>
