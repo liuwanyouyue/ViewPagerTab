@@ -195,7 +195,7 @@ public class ViewPagerIndicator extends LinearLayout{
             if (view instanceof TextView)
             {
                 ((TextView) view).setTextColor(COLOR_TEXT_NORMAL);
-                ((TextView) view).setTextSize( TypedValue.COMPLEX_UNIT_SP, 14);
+                ((TextView) view).setTextSize( TypedValue.COMPLEX_UNIT_SP, 13);
             }
         }
     }

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void initView() {
         ButterKnife.bind(this);
-        mImageView.setVisibility(View.VISIBLE);
+//        mImageView.setVisibility(View.VISIBLE);
     }
 
     private void initDatas() {
@@ -94,10 +94,8 @@ public class MainActivity extends AppCompatActivity {
         mIndicator.setViewPager(mViewPager, 0, mTextView, mDatas);
     }
 
-
-    @OnClick(R.id.next_iv)
-    void newActivity(View view) {
-        Intent intent = new Intent(MainActivity.this, TwoActivity.class);
-        startActivity(intent);
+    @OnClick(R.id.navigation_left_container)
+    void finishActivity(View view){
+        finish();
     }
 }

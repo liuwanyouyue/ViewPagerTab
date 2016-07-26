@@ -22,8 +22,9 @@ import butterknife.OnClick;
 import cn.wosdk.viewpagertab.R;
 import cn.wosdk.viewpagertab.ui.fragment.TabFragment;
 import cn.wosdk.viewpagertab.ui.widget.ColorTrackView;
+import cn.wosdk.viewpagertab.ui.widget.ScrollTabView;
 
-public class TwoActivity extends AppCompatActivity{
+public class ThreeActivity extends AppCompatActivity{
     @BindView(R.id.navigation_title)
     TextView mTextView;
     @BindView(R.id.navigation_left_container)
@@ -46,7 +47,7 @@ public class TwoActivity extends AppCompatActivity{
     ColorTrackView id_tab5_tv;
 
     @BindView(R.id.id_tab_line_iv)
-    View id_tab_line_iv;
+    ScrollTabView id_tab_line_iv;
 
     @BindViews({R.id.id_tab1_tv, R.id.id_tab2_tv, R.id.id_tab3_tv, R.id.id_tab4_tv, R.id.id_tab5_tv})
     List<ColorTrackView> mTabs;
@@ -56,8 +57,8 @@ public class TwoActivity extends AppCompatActivity{
     private TabFragment[] mFragments = new TabFragment[mDatas.size()];
     private FragmentPagerAdapter mAdapter;
 
-    private int screenWidth;//屏幕的宽度
-    private LinearLayout.LayoutParams lp;
+//    private int screenWidth;//屏幕的宽度
+//    private LinearLayout.LayoutParams lp;
     /**
      * 标题正常时的颜色
      */
@@ -70,9 +71,8 @@ public class TwoActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two);
+        setContentView(R.layout.activity_three);
         initView();
-        initTabLineWidth();
         initDatas();
         initEvents();
     }
@@ -105,9 +105,15 @@ public class TwoActivity extends AppCompatActivity{
         mViewPager.setAdapter(mAdapter);
         highLightTextView(0);
         mTextView.setText(mDatas.get(0));
+
+        id_tab_line_iv.setTabNum(mDatas.size());
+        id_tab_line_iv.setCurrentNum(0);
+        id_tab_line_iv.setSelectedColor(Color.BLUE,Color.YELLOW);
+
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                id_tab_line_iv.setOffset(position,positionOffset);
                 if (positionOffset > 0)
                 {
                     ColorTrackView left = mTabs.get(position);
@@ -125,7 +131,6 @@ public class TwoActivity extends AppCompatActivity{
             public void onPageSelected(int position) {
                 resetTextViewColor();
                 highLightTextView(position);
-                lp.leftMargin = position * (screenWidth * 1/5);
             }
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -133,18 +138,6 @@ public class TwoActivity extends AppCompatActivity{
         });
     }
 
-    /**
-     * 给指针设置合适的宽度
-     */
-    private void initTabLineWidth(){
-        DisplayMetrics dpMetrics = new DisplayMetrics();
-        getWindow().getWindowManager().getDefaultDisplay().getMetrics(dpMetrics);
-        screenWidth = dpMetrics.widthPixels;
-        lp = (LinearLayout.LayoutParams)id_tab_line_iv.getLayoutParams();
-        lp.width=screenWidth/5;
-        id_tab_line_iv.setLayoutParams(lp);
-        id_tab_line_iv.setBackgroundColor(COLOR_TEXT_HIGHLIGHTCOLOR);
-    }
 
     /**
      * 高亮文本

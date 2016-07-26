@@ -1,144 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:lwyy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:indicator="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="cn.wosdk.viewpagertab.ui.activity.HomeActivity">
 
 
-    <include layout="@layout/navigation_bar"></include>
-    <LinearLayout
-        android:id="@+id/id_switch_tab"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_one"
+       android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/one"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:baselineAligned="false"
-        >
-
-        <LinearLayout
-            android:id="@+id/id_tab_photolist"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="8dp" >
-
-            <cn.wosdk.viewpagertab.ui.widget.ColorTrackView
-                android:id="@+id/id_tab1_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-
-                lwyy:progress="1"
-                lwyy:text="测试1"
-                lwyy:text_change_color="@color/bar_bg_color"
-                lwyy:text_origin_color="@color/star_list_linearlayout_textcolor"
-                lwyy:text_size="14dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/id_tab_videolist"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:saveEnabled="false" >
-
-            <cn.wosdk.viewpagertab.ui.widget.ColorTrackView
-                android:id="@+id/id_tab2_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                lwyy:text="测试2"
-                lwyy:text_change_color="@color/bar_bg_color"
-                lwyy:text_origin_color="@color/star_list_linearlayout_textcolor"
-                lwyy:text_size="14dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/id_tab_show"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:focusable="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="8dp" >
-
-            <cn.wosdk.viewpagertab.ui.widget.ColorTrackView
-                android:id="@+id/id_tab3_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                lwyy:text="测试3"
-                lwyy:text_change_color="@color/bar_bg_color"
-                lwyy:text_origin_color="@color/star_list_linearlayout_textcolor"
-                lwyy:text_size="14dp"  />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/id_tab_journey"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:focusable="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="8dp" >
-
-            <cn.wosdk.viewpagertab.ui.widget.ColorTrackView
-                android:id="@+id/id_tab4_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                lwyy:text="测试4"
-                lwyy:text_change_color="@color/bar_bg_color"
-                lwyy:text_origin_color="@color/star_list_linearlayout_textcolor"
-                lwyy:text_size="14dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/id_tab_activity"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:focusable="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="8dp" >
-
-            <cn.wosdk.viewpagertab.ui.widget.ColorTrackView
-                android:id="@+id/id_tab5_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                lwyy:text="测试5"
-                lwyy:text_change_color="@color/bar_bg_color"
-                lwyy:text_origin_color="@color/star_list_linearlayout_textcolor"
-                lwyy:text_size="14dp"  />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/id_tab_line_iv"
-        android:layout_width="50dp"
-        android:layout_height="2dp"
-        android:background="@color/bar_bg_color"
         />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/id_page_vp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </android.support.v4.view.ViewPager>
+    <Button
+        android:id="@+id/btn_two"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/btn_three"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
 </LinearLayout>
-
-
-
